@@ -91,7 +91,7 @@
     　　** 匹配0或者更多的目录
     -->
     <!--拦截器-->
-    <!--<mvc:interceptors>
+    <mvc:interceptors>
 
         <mvc:interceptor>
             <mvc:mapping path="/customer/*"/>
@@ -105,7 +105,7 @@
             <mvc:mapping path="/admin/*"/>
             <bean class="com.iotek.fitler.AdminSessionHandlerInterceptor"></bean>
         </mvc:interceptor>
-    </mvc:interceptors>-->
+    </mvc:interceptors>
 
 
 </beans>
