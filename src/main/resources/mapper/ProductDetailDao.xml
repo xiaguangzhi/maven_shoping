@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.iotek.dao.ProductDetailDao">
+
+    <resultMap id="productDetailMap" type="ProductDetail">
+    <id column="id" property="id"></id>
+        <result column="PRODUCT_ID" property="productId"></result>
+        <result column="SMALL_IMAGE" property="smallImage"></result>
+        <result column="BIG_IMAGE" property="bigImage"></result>
+        <result column="PRODUCT_CAPTION" property="productCaption"></result>
+    </resultMap>
+    <sql id="queryProductDetail">
+        SELECT  * FROM product_detail
+    </sql>
+    <select id="findProductDetailById" parameterType="int" resultMap="productDetailMap">
+    <include refid="queryProductDetail"></include>
+        <where>
+            id=#{value}
+        </where>
+    </select>
+    <select id="findProductDetailByPId" parameterType="int" resultMap="productDetailMap">
+        <include refid="queryProductDetail"></include>
+        <where>
+            product_id=#{value}
+        </where>
+    </select>
+
+</mapper>
